@@ -1,0 +1,27 @@
+<div class="categories-container">
+{{ 
+func getCategories
+    li = []
+
+    for cat in post.Categories
+        li = li | array.add site.Categories[cat]
+    end
+
+    ret li
+end
+
+if $1
+    include 'icons/IconFolder' 'icon'
+    list = getCategories
+else
+    include 'icons/IconTags' 'icon'
+    list = post.Keywords
+end
+}}
+
+    <span class="categories">
+        {{ for item in list }}
+            <a href="{{ item.Url }}">{{ item.Title }}</a>
+        {{ end }}
+    </span>
+</div>

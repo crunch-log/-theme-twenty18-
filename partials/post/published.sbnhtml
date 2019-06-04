@@ -1,0 +1,8 @@
+<time datetime="{{ post.Published | date.to_string `%FT%T%Z` }}" title="{{ post.Published | date.to_string `%A, %B %d, %Y %R %Z` }}">
+    {{ if $1 }} {{ # Model.IsInPost }}
+        <span>{{ post.Published | date.to_string `%B %d, %Y %R` }}</span>
+    {{ else }}
+        <span class="day">{{ post.Published | date.to_string `%d` }}</span>
+        <span class="month">{{ post.Published | date.to_string `%h` }}</span>
+    {{ end }}
+</time>

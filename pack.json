@@ -1,0 +1,35 @@
+﻿{
+	"id": "Bit0.CrunchLog.Themes.Simple.Scriban",
+    "name": "Simple (Scriban)",
+    "version": "0.7.0",
+    "description": "A SIMPLE theme for Crunchlog.",
+    "homepage": "https://nullbit.se/crunchlog/themes/simple-scriban",
+  
+    "license": {
+        "name": "CC BY-SA 4.0",
+        "link": "http://creativecommons.org/licenses/by-sa/4.0/"
+    },
+  
+    "tags": [ "theme", "simple", "crunchlog", "blog", "multi-pager", "scriban" ],  
+    "features": [ "blog", "post", "page", "scriban" ],
+  
+    "author": {
+        "name": "Ishan Jain",
+        "alias": "b1thunt3r",
+        "homepage": "https://b1thunt3r.se/",
+        "social": {
+            "twitter": "https://twitter.com/b1thunt3r",
+            "github": "https://github.com/b1thunt3r"
+        }
+    },
+  
+    "outputType": "html",
+	"engineType": "scriban",
+    "output": {
+        "content": "/data",
+        "copy": {
+            "dirs": ["css", "js"],
+            "files": [ ]
+        }
+    }
+}

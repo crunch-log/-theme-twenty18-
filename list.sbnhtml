@@ -1,0 +1,20 @@
+{{
+    layoutType = 'list'
+}}
+{{ capture body }}
+    <section>
+        {{ if !model.IsHomeLayout }}
+            <header>
+                <h1>{{ model.Title }}</h1>
+            </header>
+        {{ end }}
+        <div class="post-list">
+            {{ for post in model.Posts }}
+                {{ include 'partials/post/card' post:post }}
+            {{ end }}
+        </div> 
+        {{ include 'partials/pagination' }}
+    </section>
+{{ end }}
+
+{{ include '_layout' }}

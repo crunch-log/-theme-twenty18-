@@ -1,0 +1,43 @@
+{{ 
+    layoutType = 'post'
+    post = model
+    category = site.Categories[model.DefaultCategory]
+    author = site.Authors[model.Author]
+}}
+
+{{ capture body }}
+<article class="post">
+    {{ include 'partials/post/coverImage' }}
+    <div class="data">
+        <header>
+            <h1>{{ model.Title }}</h1>
+            <div class="extra">
+                <span class="author">
+                    <a href="{{ author.Permalink }}" title="{{ author.Alias }}">{{ author.Name }}</a>
+                </span>
+                <span class="published">
+                    {{ include 'partials/post/published' true }}
+                </span>
+            </div>
+            <div class="background" style="background-color: {{ category.Color }}"></div>
+        </header>
+        {{ if post.Published != post.Updated }}
+            <aside class="updated">
+                <div><strong>Updated on: </strong>{{ post.Updated | date.to_string `%B %d, %Y %R` }}</div>
+            </aside>
+        {{ end }}
+        <div class="excerpt">
+            {{ post.Description }}
+        </div>
+        <div class="content">
+            {{ post.Content }}
+        </div>
+        <footer>
+            {{ include 'partials/post/categories' true }}
+            {{ include 'partials/post/categories' false }}
+        </footer>
+    </div>
+</article>
+{{ end }}
+
+{{ include '_layout' 'post' }}

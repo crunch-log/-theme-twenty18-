@@ -1,0 +1,16 @@
+{{ category = site.Categories[post.DefaultCategory] }}
+<article class="card" style="background-color: {{ category.Color }}">
+    {{ include 'partials/post/coverImage' }}
+    <aside class="published">
+        {{ include 'partials/post/published' false }}
+    </aside>
+    <div class="data">
+        <header>
+            <h1><a href="{{ post.Permalink }}">{{ post.Title }}</a></h1>
+        </header>
+        <div class="excerpt">
+            {{ post.Description | string.truncate 360 }}
+        </div>
+        {{ include 'partials/post/category' }}
+    </div>
+</article>

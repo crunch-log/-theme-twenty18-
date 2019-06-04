@@ -1,0 +1,26 @@
+﻿@import "../../variables.less";
+
+.card .published {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 1rem;
+    z-index: 100;
+    padding: 0.5em;
+    overflow: hidden;
+    color: @headerForeColor;
+    text-align: center;
+    line-height: @mainFontSize * 1.25;
+
+    .month {
+        font-size: @mainFontSize * 0.75;
+    }
+
+    .day {
+        font-size: @mainFontSize * 1.5;
+    }
+
+    .month, .day {
+        display: block;
+    }
+}

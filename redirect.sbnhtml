@@ -1,0 +1,15 @@
+{{ 
+    layoutType = 'redirect'
+}}
+
+{{ capture body }}
+<article class="redirect">
+    <div class="data">
+        <div class="content">
+            The page you are looking for has <a href="{{ model.Permalink }}" title="{{ model.Title }}">moved</a>.
+        </div>
+    </div>
+</article>
+{{ end }}
+
+{{ include '_layout' 'redirect' }}

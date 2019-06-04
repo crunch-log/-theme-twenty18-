@@ -1,0 +1,17 @@
+<nav>
+    <div class="pagination">
+        {{ if model.Pagination.PreviousPage }}
+            <a class="arrow" href="{{ model.Pagination.PreviousPage.Url }}">&laquo;</a>
+        {{ else }}
+            <span class="arrow">&laquo;</span> 
+        {{ end }}
+
+        <span>{{ model.Pagination.CurrentPage }} of {{ model.Pagination.TotalPages }}</span>
+
+        {{ if model.Pagination.NextPage }}
+            <a href="{{ model.Pagination.NextPage.Url }}">&raquo;</a>
+        {{ else }}
+            <span class="arrow">&raquo;</span> 
+        {{ end }}
+    </div>
+</nav>

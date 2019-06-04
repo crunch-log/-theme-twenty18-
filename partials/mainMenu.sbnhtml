@@ -1,0 +1,23 @@
+<aside class="menu-container">
+    <nav id="menu">
+        <ul class="mainmenu">
+            {{ for item in site.Menu["main"] }}
+                <li><a href="{{ item.Url }}">{{ item.Title }}</a></li>
+            {{ end }}
+        </ul>
+        <hr />
+        <ul class="categories">
+            {{ for item in ( site.Categories | array.map "Value") }}
+                {{ if item.ShowInMainMenu }}
+                <li><a href="{{ item.Url }}">{{ item.Title }}</a></li>
+                {{ end }}
+            {{ end }}
+        </ul>
+        <hr />
+        <ul class="tags">
+            {{ for item in (site.Tags | array.sort "Count") limit:20 }}
+                <li><a href="{{ item.Url }}">{{ item.Title | string.split ':' | array.last | string.strip }}</a></li>
+            {{ end }}
+        </ul>
+    </nav>
+</aside>

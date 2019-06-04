@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+{{ if layoutType == 'post' }}
+<head prefix="article: http://ogp.me/ns/article#">
+{{ else }}
+<head>
+{{ end }}
+    <title>{{ model.Title }} | {{ site.Title }}</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <base href="{{ site.Meta.BaseUrl }}" target="_self"> -->
+
+    {{ include 'partials/metatags' 'site' }}
+    {{ include 'partials/metatags' layoutType }}
+</head>
+<body>
+    {{ include 'partials/siteHeader' }}
+    <div id="main">
+        <main>
+            {{ body }}
+        </main>
+    </div>
+    {{ include 'partials/siteFooter' }}
+    <script src="/js/main.js"></script>
+</body>
+</html>

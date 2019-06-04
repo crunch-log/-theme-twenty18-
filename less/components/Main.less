@@ -1,0 +1,42 @@
+﻿@import "../variables.less";
+
+* {
+    box-sizing: border-box;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+}
+
+h1, h2, h3, h4, p, html, body, ul, li, ol {
+    margin: 0;
+    padding: 0;
+    line-height: 1.25em;
+}
+
+html {
+    background: @mainBackColor;
+    color: @mainForeColor;
+}
+
+body {
+    background: @bodyBackColor;
+    font-family: @mainFontFamily;
+    font-size: @mainFontSize;
+    font-weight: @mainFontWeight;
+    line-height: @mainLineHeight;
+    width: 100%;
+    max-width: @bodyMaxWidth;
+    margin: 0 auto;
+    min-width: 320px;
+}
+
+.content {
+    ol, ul, li {
+        margin-left: 1em;
+    }
+}
+
+img {
+    width: 100%;
+}

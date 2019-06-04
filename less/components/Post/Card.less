@@ -1,0 +1,104 @@
+﻿@import '../../variables.less';
+@maxWidth: 480px;
+
+.post-list {
+    article {
+        width: 100%;
+        padding-top: 45%;
+        position: relative;
+        color: @headerForeColor;
+        cursor: pointer;
+        background: black;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+        }
+
+        @media only screen and (max-width: @maxWidth) {
+            padding-top: unset;
+
+            img {
+                position: unset;
+                margin-bottom: -5px;
+            }
+        }
+
+        &:hover {
+            a {
+                border-bottom: 1px solid;
+            }
+        }
+    }
+
+    .cover-image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding-top: unset;
+
+        @media only screen and (max-width: @maxWidth) {
+            position: unset;
+        }
+    }
+
+    .data {
+        position: absolute;
+        background: rgba(0, 0, 0, 0.5);
+        top: 0;
+        bottom: 0;
+        right: 0rem;
+        width: 20rem;
+        display: flex;
+        flex-flow: column;
+
+        @media only screen and (max-width: @maxWidth) {
+            position: unset;
+            background: unset;
+            width: unset;
+        }
+
+        header {
+            line-height: @mainFontSize * 1.2 * 1.2;
+            padding: 1rem;
+            padding-bottom: 0.5rem;
+            order: 2;
+
+            h1 {
+                font-size: @mainFontSize * 1.2;
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                }
+            }
+
+            @media only screen and (max-width: @maxWidth) {
+                padding-top: 0.5rem;
+            }
+        }
+
+        .excerpt {
+            flex: 1;
+            padding: 0 1rem;
+            overflow: hidden;
+            order: 3;
+
+            @media only screen and (max-width: @maxWidth) {
+                padding-bottom: 1rem;
+            }
+        }
+
+        aside.category {
+            order: 4;
+
+            @media only screen and (max-width: @maxWidth) {
+                order: 1;
+            }
+        }
+    }
+}

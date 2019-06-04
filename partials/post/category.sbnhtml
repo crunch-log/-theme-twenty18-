@@ -1,0 +1,5 @@
+<aside class="category">
+    {{ include 'icons/IconFolder' 'icon' }}
+    {{ category.Title }}
+    <div class="background" style="background-color: {{ category.Color }}"></div>
+</aside>

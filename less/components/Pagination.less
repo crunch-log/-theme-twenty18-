@@ -1,0 +1,25 @@
+﻿@import "../variables.less";
+
+.pagination {
+    margin: 1rem auto;
+    text-align: center;
+
+    a, .arrow {
+        color: @mainForeColor;
+        padding: @baseFontSize/2 @baseFontSize;
+        text-decoration: none;
+    }
+
+    span.arrow {
+        color: lighten(@mainForeColor, 50%);
+    }
+
+    a.active {
+        background-color: @headerBackColor;
+        color: @headerForeColor;
+    }
+
+    a:hover:not(.active) {
+        background-color: @mainBackColor;
+    }
+}

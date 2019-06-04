@@ -1,0 +1,9 @@
+{{ include 'partials/mainMenu' }}
+<header class="site">
+    <div class="wrapper">
+        <div class="icon" id="menu-bars"><span class="bars">&boxH;</span><span class="cross">&times;</span></div>
+        <div class="logo"><a href="/">{{ site.Title }}</a></div>
+        <div class="tagline">{{ site.SubTitle }}</div>
+        <!-- <div class="icon search-button"><span class="fas fa-search"></span></div> -->
+    </div>
+</header>
