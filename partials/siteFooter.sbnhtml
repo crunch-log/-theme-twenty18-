@@ -5,10 +5,10 @@
         Copyright &copy; {{ site.CopyrightYear }} {{ if site.CopyrightYear < year }} - {{ year }} {{ end }} {{ site.Owner }}.
     </div>
     <div>
-        Powered By <a href="//nullbit.se/crunchlog" target="_blank">Crunchlog</a>.
+        Powered By <a href="//nullbit.se/crunchlog" target="_blank" rel="noreferrer">Crunchlog</a>.
     </div>
     <div>
-        Theme <a href="//nullbit.se/crunchlog/themes/simple" target="_blank">Simple</a>
+        Theme <a href="//nullbit.se/crunchlog/themes/simple" target="_blank" rel="noreferrer">Simple</a>
         By <a href="//b1thunt3r.se" target="_blank">b1thunt3r</a>
     </div>
 </footer>

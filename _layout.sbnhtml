@@ -2,9 +2,9 @@
 <html>
 
 {{ if layoutType == 'post' }}
-<head prefix="article: http://ogp.me/ns/article#">
+<head prefix="article: http://ogp.me/ns/article#" lang="model.Meta.Language">
 {{ else }}
-<head>
+<head lang="model.Meta.Language">
 {{ end }}
     <title>{{ model.Title }} | {{ site.Title }}</title>
     <meta charset="utf-8" />
