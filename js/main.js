@@ -1,4 +1,6 @@
 ﻿function docReady() {
+    addCss('/css/main.css', 'all');
+
     document.body.querySelector('#menu-bars').addEventListener('click', toogleMenu);
     document.body.querySelector('#menu').addEventListener('click', toogleMenu);
     document.body.querySelectorAll('.post-list article').forEach(function (entry) {
@@ -9,6 +11,15 @@
     });
 
     initLazyImage();
+}
+
+function addCss(cssFile, media) {
+    var node = document.createElement('link');
+    node.setAttribute('rel', 'stylesheet');
+    node.setAttribute('media', media);
+    node.setAttribute('href', cssFile);
+
+    document.head.appendChild(node);
 }
 
 function initLazyImage() {

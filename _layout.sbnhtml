@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ site.Meta.Language }}">
 
 {{ if layoutType == 'post' }}
-<head prefix="article: http://ogp.me/ns/article#" lang="model.Meta.Language">
+<head prefix="article: http://ogp.me/ns/article#">
 {{ else }}
-<head lang="model.Meta.Language">
+<head>
 {{ end }}
     <title>{{ model.Title }} | {{ site.Title }}</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <!-- <link id="main-style" rel="stylesheet" href="/css/main.css" media="all" disabled /> -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,6 +25,6 @@
         </main>
     </div>
     {{ include 'partials/siteFooter' }}
-    <script src="/js/main.js"></script>
+    <script async src="/js/main.js"></script>
 </body>
 </html>
