@@ -9,7 +9,7 @@
 <article class="post">
     {{ include 'partials/post/coverImage' }}
     <div class="data">
-        <header>
+        <header style="border-bottom: .5rem solid {{ category.Color }};">
             <h1>{{ model.Title }}</h1>
             <div class="extra">
                 <span class="author">
@@ -19,7 +19,6 @@
                     {{ include 'partials/post/published' true }}
                 </span>
             </div>
-            <div class="background" style="background-color: {{ category.Color }}"></div>
         </header>
         {{ if post.Published != post.Updated }}
             <aside class="updated">
