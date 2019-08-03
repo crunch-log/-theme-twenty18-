@@ -13,11 +13,5 @@
                 {{ end }}
             {{ end }}
         </ul>
-        <hr />
-        <ul class="tags">
-            {{ for item in (site.Tags | array.sort "Count") limit:20 }}
-                <li><a href="{{ item.Url }}">{{ item.Title | string.split ':' | array.last | string.strip }}</a></li>
-            {{ end }}
-        </ul>
     </nav>
 </aside>
