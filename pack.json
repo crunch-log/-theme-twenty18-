@@ -23,6 +23,7 @@
         }
     },
   
+    "sourceDir": "src",
     "outputType": "html",
 	"engineType": "scriban",
     "output": {
