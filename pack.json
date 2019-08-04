@@ -1,7 +1,7 @@
 ﻿{
 	"id": "Bit0.CrunchLog.Themes.Simple.Scriban",
     "name": "Simple (Scriban)",
-    "version": "0.7.0",
+    "version": "{version}",
     "description": "A SIMPLE theme for Crunchlog.",
     "homepage": "https://nullbit.se/crunchlog/themes/simple-scriban",
   
