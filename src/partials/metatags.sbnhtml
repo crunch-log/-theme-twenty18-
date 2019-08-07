@@ -20,7 +20,7 @@
 
     <meta property="og:site_name" content="{{ site.Meta.Title }}" />
 
-    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="{{ site.Meta.Social['twitter'] }}" />
     <meta name="twitter:creator" content="{{ site.Meta.Social['twitter'] }}" />
 {{ else }}
@@ -34,15 +34,15 @@
         <meta name="categories" content="{{ model.Meta.Category }}" />
         <meta name="robots" content="{{ model.Meta.Robots }}" />
 
-        <link rel="shortlink" href="{{ model.Meta.ShortUrl }}" />
-        <link rel="archives" title="{{ model.Meta.Archive.Text }}" href="{{ model.Meta.Archive.Url }}" />
+        <link rel="shortlink" href="{{ site.Meta.BaseUrl }}{{ model.Meta.ShortUrl }}" />
+        <link rel="archives" title="{{ model.Meta.Archive.Text }}" href="{{ site.Meta.BaseUrl }}{{ model.Meta.Archive.Url }}" />
 
         <meta property="og:title" content="{{ model.Meta.Title }}" />
         <meta property="og:type" content="{{ model.Meta.Type }}" />
         <meta property="og:description" content="{{ model.Meta.Description }}" />
-        <meta property="og:url" content="{{ model.Meta.CanonicalUrl }}" />
+        <meta property="og:url" content="{{ site.Meta.BaseUrl }}{{ model.Meta.CanonicalUrl }}" />
         <meta property="og:locale" content="{{ model.Meta.Language }}" />
-        <meta property="og:image" content="{{ model.Meta.Image.Url }}" />
+        <meta property="og:image" content="{{ site.Meta.BaseUrl }}{{ model.Meta.Image.Url }}" />
         <meta property="og:image:type" content="{{ model.Meta.Image.Type }}" />
         <meta property="og:image:width" content="{{ model.Meta.Image.Width }}" />
         <meta property="og:image:height" content="{{ model.Meta.Image.Height }}" />
@@ -55,15 +55,15 @@
         <meta name="categories" content="{{ model.Meta.Category }}" />
         <meta name="robots" content="{{ model.Meta.Robots }}" />
 
-        <link rel="shortlink" href="{{ model.Meta.ShortUrl }}" />
+        <link rel="shortlink" href="{{ site.Meta.BaseUrl }}{{ model.Meta.ShortUrl }}" />
         <link rel="archives" title="{{ model.Meta.Archive.Text }}" href="{{ model.Meta.Archive.Url }}" />
 
         <meta property="og:title" content="{{ model.Meta.Title }}" />
         <meta property="og:type" content="{{ model.Meta.Type }}" />
         <meta property="og:description" content="{{ model.Meta.Description }}" />
-        <meta property="og:url" content="{{ model.Meta.CanonicalUrl }}" />
+        <meta property="og:url" content="{{ site.Meta.BaseUrl }}{{ model.Meta.CanonicalUrl }}" />
         <meta property="og:locale" content="{{ model.Meta.Language }}" />
-        <meta property="og:image" content="{{ model.Meta.Image.Url }}" />
+        <meta property="og:image" content="{{ site.Meta.BaseUrl }}{{ model.Meta.Image.Url }}" />
         <meta property="og:image:type" content="{{ model.Meta.Image.Type }}" />
         <meta property="og:image:width" content="{{ model.Meta.Image.Width }}" />
         <meta property="og:image:height" content="{{ model.Meta.Image.Height }}" />
@@ -73,6 +73,6 @@
         <meta property="article:section" content="{{ model.Meta.Category }}" />
         <meta property="og:updated_time" content="{{ model.Meta.UpdatedDate | date.to_string `%FT%T%Z` }}" />
     {{ when 'redirect' }}
-        <meta http-equiv="refresh" content="{{ model.Meta.Redirect.Time }};url={{ model.Meta.Redirect.Url }}" />
+        <meta http-equiv="refresh" content="{{ model.Meta.Redirect.Time }};url={{ site.Meta.BaseUrl }}{{ model.Meta.Redirect.Url }}" />
     {{ end }}
 {{ end }}
