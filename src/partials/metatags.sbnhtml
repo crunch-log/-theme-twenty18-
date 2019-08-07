@@ -20,8 +20,6 @@
 
     <meta property="og:site_name" content="{{ site.Meta.Title }}" />
 
-    <meta name="twitter:title" content="{{ site.Meta.Title }}" />
-    <meta name="twitter:domain" content="{{ site.Meta.CanonicalUrl }}" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="{{ site.Meta.Social['twitter'] }}" />
     <meta name="twitter:creator" content="{{ site.Meta.Social['twitter'] }}" />
