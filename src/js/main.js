@@ -1,5 +1,5 @@
 ﻿function docReady() {
-    addCss('/css/main.css', 'all');
+    // addCss('/css/main.css', 'all');
 
     document.body.querySelector('#menu-bars').addEventListener('click', toogleMenu);
     document.body.querySelector('#menu').addEventListener('click', toogleMenu);
