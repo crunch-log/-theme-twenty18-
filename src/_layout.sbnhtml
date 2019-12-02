@@ -9,8 +9,7 @@
     <title>{{ model.Title }} | {{ site.Title }}</title>
     <meta charset="utf-8" />
     <!-- <link id="main-style" rel="stylesheet" href="/css/main.css" media="all" disabled /> -->
-    <link rel="stylesheet" href="/css/main.css" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="/css/main.css"></noscript>
-
+    <link rel="stylesheet" href="/css/main.css" media="all">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- <base href="{{ site.Meta.BaseUrl }}" target="_self"> -->
