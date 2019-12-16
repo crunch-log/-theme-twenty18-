@@ -1,11 +1,9 @@
 ﻿function docReady() {
-    // addCss('/css/main.css', 'all');
-
-    document.body.querySelector('#menu-bars').addEventListener('click', toogleMenu);
-    document.body.querySelector('#menu').addEventListener('click', toogleMenu);
+    document.body.querySelector('#menu-bars').addEventListener('click', toggleMenu);
+    document.body.querySelector('#menu').addEventListener('click', toggleMenu);
     document.body.querySelectorAll('.post-list article').forEach(function (entry) {
         entry.addEventListener('click', function (event) {
-            const url = this.querySelector('div.data h1 a').href;
+            var url = this.querySelector('div.data h1 a').href;
             window.location.href = url;
         });
     });
@@ -13,22 +11,13 @@
     initLazyImage();
 }
 
-function addCss(cssFile, media) {
-    var node = document.createElement('link');
-    node.setAttribute('rel', 'stylesheet');
-    node.setAttribute('media', media);
-    node.setAttribute('href', cssFile);
-
-    document.head.appendChild(node);
-}
-
 function initLazyImage() {
     var imgs = document.querySelectorAll("#main img[data-src]");
     if ("IntersectionObserver" in window) {
-        let observer = new IntersectionObserver(function(entries, observer) {
+        var observer = new IntersectionObserver(function(entries, observer) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
-                    let img = entry.target;
+                    var img = entry.target;
                     img.src = img.dataset.src;
                     observer.unobserve(img);
                 }
@@ -39,18 +28,18 @@ function initLazyImage() {
         });
     }
     else {
-        imgs.forEach(img => {
+        imgs.forEach(function(img) {
             img.addEventListener('load', loadImage);
         });
     }
 }
 
-function toogleMenu() {
+function toggleMenu() {
     document.body.querySelector('#menu').parentElement.classList.toggle('open');
 }
 
 function loadImage() {
-    const that = this;
+    var that = this;
 
     setTimeout(function () {
         that.src = that.dataset.src;
