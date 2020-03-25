@@ -1,7 +1,7 @@
 {
-  "name": "cv",
+  "name": "simple",
   "version": "0.0.1",
-  "description": "CV",
+  "description": "CrunchLog Simple Theme",
   "main": "gulpfile.js",
   "devDependencies": {
     "browser-sync": "^2.26.3",
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://bit0.visualstudio.com/_git/CV"
+    "url": "https://bit0.visualstudio.com/CrunchLog-Themes/_git/Simple-Scriban"
   },
   "author": "b1thunt3r",
   "license": "MIT"
