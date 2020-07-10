@@ -7,7 +7,9 @@
 
 {{ capture body }}
 <article class="post">
-    {{ include 'partials/post/coverImage' }}
+    <div class="imageContainer" style="min-height: 20rem; background:  {{ category.Color }};">
+        {{ include 'partials/post/coverImage' }}
+    </div>
     <div class="data">
         <header style="border-bottom: .5rem solid {{ category.Color }};">
             <h1>{{ model.Title }}</h1>
