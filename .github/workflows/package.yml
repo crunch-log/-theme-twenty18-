@@ -1,0 +1,96 @@
+name: Package Theme
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+    - "src/**"
+    - "pack.json"
+  workflow_dispatch:
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    outputs: 
+      PACKAGE_VERSION: ${{ steps.setup.outputs.PACKAGE_VERSION }}
+      PACKAGE_NAME: ${{ steps.setup.outputs.PACKAGE_NAME }}
+    
+    steps:
+    - name: Clean workspace
+      run: |
+        rm -Rf dist/
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
+    - name: Set Version
+      id: setup
+      run: |
+        echo "::set-output name=PACKAGE_VERSION::1.1.$GITHUB_RUN_NUMBER"
+        echo "::set-output name=PACKAGE_NAME::theme-twenty18"
+    
+    - name: Package
+      id: package
+      run: |
+        mkdir dist
+        ls -Al
+        pwd
+        cp -R src/* dist/
+        cp pack.json dist/
+        sed -i "s/{version}/${{ steps.setup.outputs.PACKAGE_VERSION }}/g" "dist/pack.json"
+    
+    - name: Create artifact
+      id: create_artifect
+      uses: papeloto/action-zip@v1
+      with:
+        files: dist/
+        recursive: true
+        dest: ${{ steps.setup.outputs.PACKAGE_NAME }}.zip
+    
+    - name: Upoad Artifect
+      id: upload_artifects
+      uses: actions/upload-artifact@master
+      with:
+        name: package
+        path: ${{ steps.setup.outputs.PACKAGE_NAME }}.zip
+
+  release:
+    needs: package
+    runs-on: ubuntu-latest
+    #if: github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: Download Artifact
+      uses: actions/download-artifact@v1
+      with:
+        name: package
+    
+    - name: Generate Changelog
+      id: changelog
+      uses: scottbrenner/generate-changelog-action@master
+      env:
+        REPO: ${{ github.repository }}
+    
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ needs.package.outputs.PACKAGE_VERSION }}
+        release_name: Release v${{ needs.package.outputs.PACKAGE_VERSION }}
+        body: |
+          ${{ steps.changelog.outputs.changelog }}
+        draft: false
+        prerelease: false
+    
+    - name: Upload Release
+      id: upload_release 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./package/${{ needs.package.outputs.PACKAGE_NAME }}.zip
+        asset_name: ${{ needs.package.outputs.PACKAGE_NAME }}.zip
+        asset_content_type: application/zip
