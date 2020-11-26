@@ -4,7 +4,7 @@
         <div class="icon" id="menu-bars">
             <span class="bars">{{include 'icons/IconBars' 'menu-icon'}}</span>
             <span class="cross">{{include 'icons/IconTimes' 'menu-icon'}}</span></div>
-        <div class="logo"><a href="/"><img src="{{ site.Logo }}" alt="{{ site.Title }}"/></a></div>
+        <div class="logo"><a href="/"><img loading="eager" src="{{ site.Logo }}" alt="{{ site.Title }}"/></a></div>
         <div class="tagline">{{ site.SubTitle }}</div>
         <!-- <div class="icon search-button"><span class="fas fa-search"></span></div> -->
     </div>
