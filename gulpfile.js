@@ -34,3 +34,5 @@ gulp.task('watch',  function(done) {
     gulp.watch("./src/less/**/*.less", gulp.series('less'));
     done();
 });
+
+gulp.task('default', gulp.series('less'));
