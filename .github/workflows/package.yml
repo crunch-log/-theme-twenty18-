@@ -1,8 +1,15 @@
-name: Package Theme
+name: Package and Release Theme
 
 on:
   push:
-    branches: [ master ]
+    branches:
+    - master
+    paths:
+    - "src/**"
+    - "pack.json"
+  pull_request:
+    branches:
+    - master
     paths:
     - "src/**"
     - "pack.json"
