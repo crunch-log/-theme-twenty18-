@@ -7,7 +7,7 @@
 
 {{ capture body }}
 <article class="post">
-    <div class="imageContainer" style="min-height: 20rem; background:  {{ category.Color }};">
+    <div class="imageContainer" style="background:  {{ category.Color }};">
         {{ include 'partials/post/coverImage' }}
     </div>
     <div class="data">
@@ -33,7 +33,7 @@
         <div class="content">
             {{ post.Content }}
         </div>
-        <footer>
+        <footer style="background: {{ category.Color }};">
             {{ include 'partials/post/categories' true }}
             {{ include 'partials/post/categories' false }}
         </footer>
