@@ -17,6 +17,7 @@ aside.menu-container {
 
     &.open {
         top: 0;
+        box-shadow: 8px 8px 8px rgba(0,0,0,0.2);
 
         & + header #menu-bars {
             & > .bars {
@@ -43,7 +44,8 @@ aside.menu-container {
     a {
         color: @headerForeColor;
         text-decoration: none;
-        line-height: @mainFontSize * 2;
+        line-height: @mainFontSize * 2.65;
+        font-family: Arial, Helvetica, sans-serif;
 
         &:hover {
             text-decoration: underline;
@@ -54,7 +56,7 @@ aside.menu-container {
         list-style: none;
         background: @headerBackColor;
         padding: 0.5em 0;
-        max-width: 80%;
+        max-width: 70%;
         margin: 0 auto;
     }
 
