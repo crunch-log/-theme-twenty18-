@@ -14,6 +14,7 @@ article.post {
         min-width: 320px;
         z-index: 100;
         position: relative;
+        backdrop-filter: blur(4px);
 
         @media only screen and (max-width: 1280px) {
             margin-top: -5rem;
@@ -52,6 +53,7 @@ article.post {
             z-index: 0;
             overflow: hidden;
             background-color: fade(@headerBackColor, 75%);
+            border-radius: 4px 4px 0 0;
 
             h1 {
                 padding-top: 0.5rem;
