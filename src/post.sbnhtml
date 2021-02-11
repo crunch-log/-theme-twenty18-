@@ -11,7 +11,7 @@
         {{ include 'partials/post/coverImage' }}
     </div>
     <div class="data">
-        <header style="border-bottom: .5rem solid {{ category.Color }};">
+        <header style="background: {{ category.Color }}C0;">
             <h1>{{ model.Title }}</h1>
             <div class="extra">
                 <span class="author">
