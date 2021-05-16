@@ -11,7 +11,8 @@
         background: black;
         overflow: hidden;
         border-radius: 0.25rem;
-        box-shadow: 0rem 0.2rem 0.5rem 0rem hsl(255 0% 0% / 35%);
+        box-shadow: 0rem .2rem 1rem -0.2rem hsl(255 0% 0% / 80%);
+        transition: box-shadow 250ms ease;
 
         &:hover {
             box-shadow: 0rem 0.2rem 0.7rem 0rem hsl(255 0% 0% / 75%);
@@ -34,7 +35,7 @@
 
         &:hover {
             a {
-                border-bottom: 1px solid;
+                border-bottom: 1px solid !important;
             }
         }
     }
@@ -80,6 +81,8 @@
                 a {
                     text-decoration: none;
                     color: inherit;
+                    transition: border 250ms ease;
+                    border-bottom: 0px transparent;
                 }
             }
 
