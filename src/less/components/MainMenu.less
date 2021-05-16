@@ -8,16 +8,17 @@ aside.menu-container {
     color: @headerForeColor;
     background: @headerBackColor;
     overflow-y: auto;
-    transition: top 256ms ease;
-    z-index: 1000;
+    transition: left 250ms ease;
+    z-index: 2000;
     position: fixed;
-    top: -100%;
+    top: @headerLineHeight;
+    left: -100%;
     height: 100%;
     padding-top: @headerLineHeight;
 
     &.open {
-        top: 0;
-        box-shadow: 8px 8px 8px rgba(0,0,0,0.2);
+        left: 0;
+        box-shadow: 0rem 0.2rem 0.5rem 0rem hsl(255 0% 0% / 40%);
 
         & + header #menu-bars {
             & > .bars {
