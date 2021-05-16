@@ -1,4 +1,4 @@
-# Theme: Simple
+# Theme: Twenty18
 
 Theme for [CrunchLog](https://nullbit.se/crunchlog).
 
