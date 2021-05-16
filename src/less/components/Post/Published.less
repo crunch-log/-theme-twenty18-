@@ -11,6 +11,8 @@
     color: @headerForeColor;
     text-align: center;
     line-height: @mainFontSize * 1.25;
+    backdrop-filter: blur(0.25rem);
+    border-radius: 0 0 0.2rem 0.2rem;
 
     .month {
         font-size: @mainFontSize * 0.75;
@@ -20,7 +22,8 @@
         font-size: @mainFontSize * 1.5;
     }
 
-    .month, .day {
+    .month,
+    .day {
         display: block;
     }
 }
