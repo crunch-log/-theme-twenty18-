@@ -2,14 +2,14 @@
     <nav id="menu">
         <ul class="mainmenu">
             {{ for item in site.Menu["main"] }}
-                <li><a href="{{ item.Url }}">{{ item.Title }}</a></li>
+                <li><a href="{{ item.Url }}" style="--color: #2e3537">{{ item.Title }}</a></li>
             {{ end }}
         </ul>
         <hr />
         <ul class="categories">
             {{ for item in ( site.Categories | array.map "Value") }}
                 {{ if item.ShowInMainMenu }}
-                <li><a href="{{ item.Url }}">{{ item.Title }}</a></li>
+                <li><a href="{{ item.Url }}" style="--color: {{ item.Color }}">{{ item.Title }}</a></li>
                 {{ end }}
             {{ end }}
         </ul>

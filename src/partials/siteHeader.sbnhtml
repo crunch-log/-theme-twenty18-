@@ -1,9 +1,14 @@
 {{ include 'partials/mainMenu' }}
 <header class="site">
     <div class="wrapper">
-        <div class="icon" id="menu-bars">
-            <span class="bars">{{include 'icons/IconBars' 'menu-icon'}}</span>
-            <span class="cross">{{include 'icons/IconTimes' 'menu-icon'}}</span></div>
+        <!-- Menu inspired by: https://codemyui.com/hamburger-menu-to-x/ -->
+        <div id="menu-bars">
+            <div class="bars">
+            <span class="bar top"></span>
+            <span class="bar middle"></span>
+            <span class="bar bottom"></span>
+            </div>
+        </div>
         <div class="logo"><a href="/"><img loading="eager" src="{{ site.Logo.Url }}" alt="{{ site.Title }}"/></a></div>
         <div class="tagline">{{ site.SubTitle }}</div>
         <!-- <div class="icon search-button"><span class="fas fa-search"></span></div> -->
