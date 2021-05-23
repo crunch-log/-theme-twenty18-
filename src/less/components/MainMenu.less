@@ -50,33 +50,9 @@ aside.menu-container {
         }
     }
 
-    &.open {
+    body.menu-open & {
         left: 0;
         box-shadow: 0 1.2rem 1.2rem -0.3rem hsl(255 0% 0%);
-
-        &+header #menu-bars .bars {
-            transform: rotate(-45deg);
-
-            .bar {
-                background: fade(@headerForeColor, 60%);
-
-                &.top,
-                &.bottom {
-                    height: 30%;
-                    width: 20%;
-                    margin-left: 40%;
-                    border-radius: 50px 50px 0 0;
-                }
-
-                &.bottom {
-                    border-radius: 0 0 50px 50px;
-                }
-
-                &.middle {
-                    margin: 10% 0;
-                }
-            }
-        }
     }
 
     a {
@@ -89,8 +65,9 @@ aside.menu-container {
         display: block;
         margin: 0.5rem 0;
         background: var(--color);
-        border-radius: 0.25em;
-        border: 0.1em solid hsla(60, 1%, 93%, 20%);
+        border-radius: 0.25em 0 0 0.25em;
+        border: 0.1em solid transparent;
+        border-left-width: 0.5em;
         padding: 0 0.4em;
 
         &:hover {
@@ -122,5 +99,23 @@ aside.menu-container {
             font-size: 0.75em;
             line-height: 1em;
         }
+    }
+}
+
+.menu-blur {
+    background: hsla(195, 7.8%, 20%, 0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -500;
+    backdrop-filter: blur(0.5em);
+    transition: opacity 500ms ease;
+    opacity: 0;
+
+    body.menu-open & {
+        opacity: 100;
+        z-index: 500;
     }
 }
