@@ -1,10 +1,21 @@
 ﻿function docReady() {
     document.body.querySelector('#menu-bars').addEventListener('click', toggleMenu);
-    document.body.querySelector('#menu').addEventListener('click', toggleMenu);
+    document.body.querySelector('.menu-blur').addEventListener('click', toggleMenu);
     document.body.querySelectorAll('.post-list article').forEach(function (entry) {
-        entry.addEventListener('click', function (event) {
+        entry.addEventListener('mousedown', function (event) {
             var url = this.querySelector('div.data h1 a').href;
-            window.location.href = url;
+            switch (event.which) {
+                case 1:
+                    event.preventDefault();
+                    window.location.href = url;
+                    break;
+                case 2:
+                    event.preventDefault();
+                    window.open(url);
+                    break;
+                default:
+                    break;
+            }
         });
     });
 
@@ -14,8 +25,8 @@
 function initLazyImage() {
     var imgs = document.querySelectorAll("#main img[data-src]");
     if ("IntersectionObserver" in window) {
-        var observer = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
+        var observer = new IntersectionObserver(function (entries, observer) {
+            entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
                     var img = entry.target;
                     img.src = img.dataset.src;
@@ -23,19 +34,19 @@ function initLazyImage() {
                 }
             });
         });
-        imgs.forEach(function(img) {
+        imgs.forEach(function (img) {
             observer.observe(img);
         });
     }
     else {
-        imgs.forEach(function(img) {
+        imgs.forEach(function (img) {
             img.addEventListener('load', loadImage);
         });
     }
 }
 
 function toggleMenu() {
-    document.body.querySelector('#menu').parentElement.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
 }
 
 function loadImage() {

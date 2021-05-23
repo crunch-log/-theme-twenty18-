@@ -45,3 +45,27 @@ header.site {
         }
     }
 }
+
+body.menu-open #menu-bars .bars {
+    transform: rotate(-45deg);
+
+    .bar {
+        background: fade(@headerForeColor, 60%);
+
+        &.top,
+        &.bottom {
+            height: 30%;
+            width: 20%;
+            margin-left: 40%;
+            border-radius: 50px 50px 0 0;
+        }
+
+        &.bottom {
+            border-radius: 0 0 50px 50px;
+        }
+
+        &.middle {
+            margin: 10% 0;
+        }
+    }
+}
