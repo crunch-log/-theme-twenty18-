@@ -2,7 +2,7 @@
     layoutType = 'list'
 }}
 {{ capture body }}
-    <section>
+    <section class="list">
         {{ if !model.IsHomeLayout }}
             <header>
                 <h1>{{ model.Title }}</h1>
