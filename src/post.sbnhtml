@@ -23,8 +23,14 @@
             </div>
         </header>
         {{ if post.Published != post.Updated }}
-            <aside class="updated">
-                <div><strong>Updated on: </strong>{{ post.Updated | date.to_string `%B %d, %Y %R` }}</div>
+            <aside class="updates">
+                <h6 class="title">Updates</h6>
+                {{ for update in post.Updates }}
+                <div class="update">
+                    <time>{{ update.UpdatedOn | date.to_string `%B %d, %Y %R` }}</time>
+                    <p>{{ update.Message }}</p>
+                </div>
+                {{ end }}
             </aside>
         {{ end }}
         <div class="excerpt">
