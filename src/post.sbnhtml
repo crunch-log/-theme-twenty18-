@@ -36,6 +36,12 @@
         <div class="excerpt">
             {{ post.Description }}
         </div>
+        <aside class="disclaim">
+            <div>
+                <h6>Disclaim</h6>
+                <p>{{ post.DisclaimMessage }}</p>
+            </div>
+        </aside>
         <div class="content">
             {{ post.Content }}
         </div>

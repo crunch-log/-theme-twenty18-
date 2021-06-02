@@ -33,7 +33,7 @@ jobs:
     - name: Set Version
       id: setup
       run: |
-        echo "::set-output name=PACKAGE_VERSION::2.1.$GITHUB_RUN_NUMBER"
+        echo "::set-output name=PACKAGE_VERSION::2.2.$GITHUB_RUN_NUMBER"
         echo "::set-output name=PACKAGE_NAME::theme-twenty18"
     
     - name: Compile theme
