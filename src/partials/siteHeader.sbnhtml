@@ -9,7 +9,15 @@
             <span class="bar bottom"></span>
             </div>
         </div>
-        <div class="logo"><a href="/"><img loading="eager" src="{{ site.Logo.Url }}" alt="{{ site.Title }}"/></a></div>
+        <div class="logo">
+            <a href="/">
+                {{ if (site.Logo) }}
+                <img loading="eager" src="{{ site.Logo.Url }}" alt="{{ site.Title }}"/>
+                {{ else }}
+                    {{ site.Title }}
+                {{ end }}
+            </a>
+        </div>
         <div class="tagline">{{ site.SubTitle }}</div>
         <!-- <div class="icon search-button"><span class="fas fa-search"></span></div> -->
     </div>
