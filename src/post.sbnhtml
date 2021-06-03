@@ -2,7 +2,7 @@
     layoutType = 'post'
     post = model
     category = site.Categories[model.DefaultCategory]
-    author = site.Authors[model.Author]
+    author = site.Authors[model.Authors | array.first]
 }}
 
 {{ capture body }}
@@ -14,9 +14,12 @@
         <header style="--bg-color-start: {{ category.Color }}80; --bg-color-end: {{ category.Color }};">
             <h1>{{ model.Title }}</h1>
             <div class="extra">
+                {{ for alias in model.Authors }}
+                {{ author = site.Authors[alias] }}
                 <span class="author">
                     <a href="{{ author.Permalink }}" title="{{ author.Alias }}">{{ author.Name }}</a>
                 </span>
+                {{ end }}
                 <span class="published">
                     {{ include 'partials/post/published' true }}
                 </span>

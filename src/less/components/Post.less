@@ -190,15 +190,20 @@ article.post {
 
         .author {
             &::before {
-                content: 'BY ';
+                content: ',';
+                margin-right: 0.3ch;
                 font-size: 0.85em;
+            }
+
+            &:first-of-type::before {
+                content: 'By';
+                text-transform: uppercase;
             }
         }
 
         .published:before {
             content: '@ ';
             font-size: 0.85em;
-            margin-left: 0.5em;
         }
 
         .extra {
